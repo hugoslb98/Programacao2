@@ -2,33 +2,34 @@
 #include <stdlib.h>
 
 int main(int argc, char** argv) {
-    float n1, n2;
+    float n1, n2, res;
     char op;
     
     //Introducao dos numeros
     puts("Introduza um numero: ");
-    scanf("%d", &n1);
+    scanf("%f", &n1);
     puts("Introduza outro numero: ");
-    scanf("%d", &n2);
-    puts("Introduza a operacao (+)(-)(*)(/)");
+    scanf("%f", &n2);
+    puts("Introduza a operacao: ");
     scanf("%c", &op);
+    op = getchar();
     
     //Estrutura de selecao1
     switch (op){
         case '+':
-            printf("%.2f", n1 + n2);
+            printf("%.2f\n", res = n1 + n2);
             break;
         case '-':
-            printf("%.2f", n1 - n2);
+            printf("%.2f\n", res = n1 - n2);
             break;
         case '*':
-            printf("%.2f", n1 * n2);
+            printf("%.2f\n", res = n1 * n2);
             break;
         case '/':
-            printf("%.2f", n1 / n2);
+            printf("%.2f\n", res = n1 / n2);
             break;
         default:
-            printf("Introduziu operador invalido!");
+            printf("Introduziu operador invalido!\n");
     }
     return 0;
 }
