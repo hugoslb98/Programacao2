@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=ex8-incompleto
+PROJECTNAME=ex8
 
 # Active Configuration
 DEFAULTCONF=Debug

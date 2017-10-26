@@ -9,15 +9,15 @@ int main(int argc, char** argv) {
     puts("Introduza a hora e os minutos da saida: ");
     scanf("%d%d", &horasaida, &minsaida);
     
-    entradaTotal = (horaentrada + minentrada) *  3600;
-    saidaTotal = (horasaida + minsaida) * 3600;
+    entradaTotal = (horaentrada * 3600) +  minentrada;
+    saidaTotal = (horasaida * 3600) + minsaida;
     horas =(saidaTotal - entradaTotal);
     
     if(horas < 0){
-        horas = (24 *3600) + horas;
+        horas = horas + (24 * 3600);
     }
     
-    printf("O funcionario trabalhou %d horas e %d minutos\n", horas / 3600, horas % (3600 /60));
+    printf("O funcionario trabalhou %d horas e %d minutos\n", (horas / 3600), horas % (3600 /60));
     
     return 0;
 }
