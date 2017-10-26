@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=ex7
+PROJECTNAME=ex7-incompleto
 
 # Active Configuration
 DEFAULTCONF=Debug

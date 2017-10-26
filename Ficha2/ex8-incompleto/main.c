@@ -2,17 +2,22 @@
 #include <stdlib.h>
 
 int main(int argc, char** argv) {
-    int horentr, minentr, horsai, minsai, difhor, difmin;
+    int horaentrada, minentrada, horasaida, minsaida, entradaTotal, saidaTotal, horas;
     
     puts("Introduza a hora e os minutos da entrada: ");
-    scanf("%d%d", &horentr, &minentr);
+    scanf("%d%d", &horaentrada, &minentrada);
     puts("Introduza a hora e os minutos da saida: ");
-    scanf("%d%d", &horsai, &minsai);
+    scanf("%d%d", &horasaida, &minsaida);
     
-    difhor = horsai - horentr;
-    difmin = minsai - minentr;
+    entradaTotal = (horaentrada + minentrada) *  3600;
+    saidaTotal = (horasaida + minsaida) * 3600;
+    horas =(saidaTotal - entradaTotal);
     
-    printf("O funcionario trabalhou %d horas e %d minutos\n", difhor, difmin);
+    if(horas < 0){
+        horas = (24 *3600) + horas;
+    }
+    
+    printf("O funcionario trabalhou %d horas e %d minutos\n", horas / 3600, horas % (3600 /60));
     
     return 0;
 }
