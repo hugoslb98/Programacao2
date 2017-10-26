@@ -8,8 +8,9 @@ int main(int argc, char** argv) {
     puts("Introduza um numero: ");
     scanf("%d", &num1);
     puts("Introduza outro numero: ");
-    scanf("%d\n", &num2);
+    scanf("%d", &num2);
     
+    //Estruras de repeticao
     for (i = num1; i <= num2; ++i) {
         printf("%d\n", i);
     }
