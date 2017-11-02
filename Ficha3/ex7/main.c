@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
     if(num > 0) {
     for(i = num - 1; i >= 0; --i){
         if(i % 2 != 0){
-            printf("%d ", i);  
+            printf("%d \n", i);  
         }
     }    
     }else{
