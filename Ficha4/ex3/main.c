@@ -1,24 +1,45 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   main.c
- * Author: hugom
- *
- * Created on 7 de Novembro de 2017, 19:09
- */
-
 #include <stdio.h>
 #include <stdlib.h>
+#define E 1.15965
+#define D 0.862329151
 
-/*
- * 
- */
+void limparBufferEntrada(){
+    char ch;
+    while((ch = getchar()) != '\n' && ch !=EOF);
+}
+
+char lerChar(){
+    char moeda;
+    puts("Introduza a moeda para converter: ");
+    scanf("%c", &moeda);
+    limparBufferEntrada();
+    return moeda;
+}
+ 
+double lerDouble(){
+    double num;
+    puts("Introduza um numero: ");
+    scanf("%lf", &num);
+    return num;
+}
+
+void converter(char moeda, double num){
+    if(moeda == 'e'){
+        printf("Sao: %.2lf\n", num * D);
+    }else{(moeda == 'd');
+        printf("Sao: %.2lf\n", num * E);
+    }
+}
+
 int main(int argc, char** argv) {
-
-    return (EXIT_SUCCESS);
+    double num;
+    char moeda;
+    
+    moeda = lerChar();
+    num = lerDouble();   
+    
+    converter(moeda, num);
+    
+    return 0;
 }
 
