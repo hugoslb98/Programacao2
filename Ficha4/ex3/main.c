@@ -25,9 +25,9 @@ double lerDouble(){
 
 void converter(char moeda, double num){
     if(moeda == 'e'){
-        printf("Sao: %.2lf\n", num * D);
+        printf("Sao: %.2lf dolares\n", num * D);
     }else{(moeda == 'd');
-        printf("Sao: %.2lf\n", num * E);
+        printf("Sao: %.2lf euros\n", num * E);
     }
 }
 

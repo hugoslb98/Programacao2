@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=ex2
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/ex2
+CND_ARTIFACT_NAME_Debug=ex2_variaveis_locais
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/ex2_variaveis_locais
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=ex2.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/ex2.tar
+CND_PACKAGE_NAME_Debug=ex2variaveislocais.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/ex2variaveislocais.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=ex2
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/ex2
+CND_ARTIFACT_NAME_Release=ex2_variaveis_locais
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/ex2_variaveis_locais
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=ex2.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/ex2.tar
+CND_PACKAGE_NAME_Release=ex2variaveislocais.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/ex2variaveislocais.tar
 #
 # include compiler specific variables
 #

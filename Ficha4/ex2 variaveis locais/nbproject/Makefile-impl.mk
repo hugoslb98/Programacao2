@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=ex2
+PROJECTNAME=ex2 variaveis locais
 
 # Active Configuration
 DEFAULTCONF=Debug
