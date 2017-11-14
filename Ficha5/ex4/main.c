@@ -3,8 +3,8 @@
 #define ARRAY_TAM 10
 
 int main(int argc, char** argv) {
-    int i;
-    double vetor[ARRAY_TAM], num, soma;
+    int i, total = 0;
+    double vetor[ARRAY_TAM], num, soma, media;
     
     for(i = 0; i < ARRAY_TAM; ++i){
         printf("Introduza um numero: ");
@@ -13,15 +13,15 @@ int main(int argc, char** argv) {
             break;
         }else{
             vetor[i] = num;
-            ++num;
+            soma = soma +  vetor[i];
+            ++total;
         }
     }
     printf("Ja foram introduzidos todos os numeros !!\n");
-    
-    for(i = 0; i < ARRAY_TAM; ++i){
-        soma = soma +  vetor[i];
-    }
-    printf("A media dos numeros do vetor e: %lf\n", soma/num);
+
+        media = soma / total;
+  
+    printf("A media dos numeros do vetor e: %lf\n", media);
     return 0;
 }
 
