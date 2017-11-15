@@ -22,6 +22,7 @@ int main(int argc, char** argv) {
         media = soma / total;
   
     printf("A media dos numeros do vetor e: %lf\n", media);
+    
     return 0;
 }
 
