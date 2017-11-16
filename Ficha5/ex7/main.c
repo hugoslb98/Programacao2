@@ -4,9 +4,6 @@
 
 int main(int argc, char** argv) {
     int i, j, vetorA[ARRAY_TAM], vetorB[ARRAY_TAM], vetorC[ARRAY_TAM], vetorD[ARRAY_TAM], cont, arrayD;
-   
-    cont = 0;
-    arrayD = 0;
     
     for(i = 0; i < ARRAY_TAM; ++i){
         puts("Introduza um numero para o Vetor A: ");
@@ -18,30 +15,17 @@ int main(int argc, char** argv) {
         scanf("%d", &vetorB[i]);
     }
     
-    for(i = 0; i < (ARRAY_TAM * 2); ++i){
-          
-        vetorC[i] = vetorA[i];  
- 
-            for(j = 9; j < (ARRAY_TAM * 2); ++j){
-                vetorC[i] = vetorB[j];
-            }
-        } 
-   
-    puts("Vetor C");
-    for(i = 0; i < (ARRAY_TAM * 2); ++i){
-        printf("%d\n", vetorC[i]);
-    }
-    
-    for(i = 0; i < ARRAY_TAM; ++i){
-        for(j = 0; j < ARRAY_TAM; ++j){
-            if(vetorA[i] == vetorB[j]){
-                break;
-            }else{
-            
-                cont = cont + 1;
-           }
+        puts("Vetor C");
+        for(i = 0; i < ARRAY_TAM; ++i){
+            vetorC[i] = vetorA[i];
+            printf("%d\n", vetorC[i]);
         }
         
+        for(j = 0; j < ARRAY_TAM; ++j){
+            vetorC[j] = vetorB[j];
+            printf("%d\n", vetorC[j]);
+        }
+    
         if(cont == 10){
             vetorD[arrayD] = vetorA[i];
             arrayD = arrayD + 1;
@@ -50,8 +34,7 @@ int main(int argc, char** argv) {
             puts("Vetor D");
             printf("%d\n", vetorD[i]);
         }
-    }
-    
+        
     return 0;
 }
 
