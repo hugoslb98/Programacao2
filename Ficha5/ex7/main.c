@@ -25,15 +25,6 @@ int main(int argc, char** argv) {
             vetorC[j] = vetorB[j];
             printf("%d\n", vetorC[j]);
         }
-    
-        if(cont == 10){
-            vetorD[arrayD] = vetorA[i];
-            arrayD = arrayD + 1;
-            
-            
-            puts("Vetor D");
-            printf("%d\n", vetorD[i]);
-        }
         
     return 0;
 }

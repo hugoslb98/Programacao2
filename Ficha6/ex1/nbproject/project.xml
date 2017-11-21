@@ -3,10 +3,10 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>ex8</name>
+            <name>ex1</name>
             <c-extensions/>
             <cpp-extensions/>
-            <header-extensions>c</header-extensions>
+            <header-extensions>c,h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList/>
