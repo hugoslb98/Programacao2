@@ -4,7 +4,8 @@
 #define TAM 20
 
 int main(int argc, char** argv) {
-     char palavra1[TAM], palavra2[TAM];
+     char palavra1[TAM];
+     char palavra2[TAM];
      int alfab;
      
      puts("Insira uma palavra: ");
@@ -17,7 +18,7 @@ int main(int argc, char** argv) {
      
      if(alfab < 0){
          printf("A palavra e: %s\n", palavra1);
-         printf("A palavra e: %s\n", palavra1);
+         printf("A palavra e: %s\n", palavra2);
      }else{
          printf("A palavra e: %s\n", palavra2);
          printf("A palavra e: %s\n", palavra1);
