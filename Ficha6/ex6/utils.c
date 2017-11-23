@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <string.h>
 #include "utils.h"
+#define TAM 20
 
 void clean_buffer(){ 
     char ch; 
@@ -13,5 +15,17 @@ int lerString(char *string, int max) {
         else{ clean_buffer(); }
         return 1;     
     }   
-    return 0;     
-} 
+}
+    
+void countChar(char vetor[], char caracter){
+int i, cont;
+    cont = 0;
+    for(i = 0; i < TAM; ++i)
+    {
+        if(vetor[i] == caracter)
+        {
+            cont = cont + 1;
+        }
+    }
+    printf("Ha %d caracteres %c na palavra %s !!\n", cont, caracter, vetor);
+}
