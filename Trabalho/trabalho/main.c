@@ -1,23 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "utils.h"
-#define MATRIZTAM 9
+#define MATRIZTAM 10
 #define NUMTOKEN 1
 
+//funcao para os jogadores escolherem os tokens
 void escolherTokens(char tokens[]){
     
     do{
         puts("Jogador 1 introduza o seu token: ");
         scanf("%c", &tokens[0]);
-        clean_buffer();
+        clean_buffer(); //funcao para limpar o Buffer
 
         puts("Jogador 2 introduza o seu token: ");
         scanf("%c", &tokens[1]);
-        clean_buffer();
+        clean_buffer(); //funcao para limpar o Buffer
     }while(tokens[0] == tokens[1]);
     
 }
 
+//funcao para preencher a matriz
 void preencherMatriz(char matriz[][MATRIZTAM]){
     int i, j;
     
