@@ -25,24 +25,25 @@ void preencherMatriz(char matriz[MATRIZTAM][MATRIZTAM]){
     int num;
     char letra;
     letra = 'A';
+
+    matriz[0][0] = ' ';
     
     for (i = 1; i < MATRIZTAM; ++i){
-        matriz[0][i] = letra;
+        matriz[i][0] = letra;
         ++letra;
         printf("%c", letra);
     }
-    
-    for (j = 1; j < MATRIZTAM; ++j){
-        puts("");
-        matriz[j][0] = num;
+
+    for (i = 1; i < MATRIZTAM; ++i){
+        matriz[0][j] = num;
         ++num;
         printf("%d", num);
     }
-    
+
     puts("");
-    
-    for (i = 1; i < MATRIZTAM; ++i) {
-        for (j = 1; j < MATRIZTAM; ++j){ 
+
+    for (i = 0; i < MATRIZTAM; ++i) {
+        for (j = 0; j < MATRIZTAM; ++j){ 
             matriz[i][j] = '-';
         }
     }
