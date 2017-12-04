@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "utils.h"
-#define MATRIZTAM 10
+#define MATRIZTAM 9
 #define NUMTOKEN 1
 
 //funcao para os jogadores escolherem os tokens
@@ -23,28 +23,27 @@ void escolherTokens(char tokens[]){
 void preencherMatriz(char matriz[MATRIZTAM][MATRIZTAM]){
     int i, j;
     int num;
-    char letra;
-    letra = 'A';
+    char letra = 'A';
     
-    for (i = 1; i < MATRIZTAM; ++i){
-        matriz[0][i] = letra;
-        ++letra;
-        printf("%c", letra);
+    //prencher a matriz com -
+    for (j=0; j<MATRIZTAM; ++j){
+        for (i=0; i<MATRIZTAM; ++i){
+            matriz[j][i]='-';
+        }
     }
     
-    for (j = 1; j < MATRIZTAM; ++j){
-        puts("");
-        matriz[j][0] = num;
-        ++num;
-        printf("%d", num);
-    }
+    //abecedario na 1ª linha
+    printf("| |A|B|C|D|E|F|G|H|I|");
     
     puts("");
     
-    for (i = 1; i < MATRIZTAM; ++i) {
-        for (j = 1; j < MATRIZTAM; ++j){ 
-            matriz[i][j] = '-';
+    //numeros na 1ª coluna
+    for (i = 0; i < MATRIZTAM; ++i) {
+        printf("|%d|", i + 1);
+        for (j = 0; j < MATRIZTAM; ++j){
+            printf("%c|", matriz[i][j]);
         }
+        puts("");
     }
 }
 
