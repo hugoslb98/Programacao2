@@ -26,8 +26,8 @@ void preencherMatriz(char matriz[MATRIZTAM][MATRIZTAM]){
     char letra = 'A';
     
     //prencher a matriz com -
-    for (j=0; j<MATRIZTAM; ++j){
-        for (i=0; i<MATRIZTAM; ++i){
+    for (j = 0; j < MATRIZTAM; ++j){
+        for (i = 0; i < MATRIZTAM; ++i){
             matriz[j][i]='-';
         }
     }
@@ -47,6 +47,26 @@ void preencherMatriz(char matriz[MATRIZTAM][MATRIZTAM]){
     }
 }
 
+void jogada(char matriz[MATRIZTAM][MATRIZTAM], char tokens[]){
+    int linha, coluna, jog, i;
+    
+    for(i = 0; i < MATRIZTAM; ++i){
+    do{
+    puts("Jogador 1 introduza a linha: (de 1 a 9)");
+    scanf("%d", &linha);
+    puts("Jogador 1 introduza a coluna: (de A a I)");
+    scanf("%c", &coluna);
+    clean_buffer();
+    
+    puts("Jogador 2 introduza a linha: (de 1 a 9)");
+    scanf("%d", &linha);
+    puts("Jogador 2 introduza a coluna: (de A a I)");
+    scanf("%c", &coluna);
+    clean_buffer();
+    }while (matriz[MATRIZTAM][MATRIZTAM] != '-');
+    }
+}
+
 int main(int argc, char** argv) {
     char matriz[MATRIZTAM][MATRIZTAM];
     char tokens[2];
@@ -54,7 +74,8 @@ int main(int argc, char** argv) {
     escolherTokens(tokens);
     preencherMatriz(matriz);
     escreverMatriz(matriz);
-  
+    jogada(matriz, tokens);
+    
     return 0;
 }
 
