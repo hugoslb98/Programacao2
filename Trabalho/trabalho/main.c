@@ -3,50 +3,51 @@
 #include "utils.h"
 #define MATRIZTAM 9
 
-int verificar(char matriz[][MATRIZTAM], char tokens[], int linha, char coluna) {
+int verificar(char matriz[][MATRIZTAM]) {
     int i, j;
 
-
     //verificar horizontalmente
-    for (i = 1; i < MATRIZTAM; ++i) {
-        for (j = 1; j < MATRIZTAM - 2; ++j) {
+    for (i = 0; i < MATRIZTAM; ++i) {
+        for (j = 0; j < MATRIZTAM - 2; ++j) {
             if (matriz[i][j] != '-' && matriz[i][j] == matriz[i][j + 1] && matriz[i][j] == matriz[i][j + 2]) {
-                return (0);
-                exit(0);
+                return 1;
             }
         }
     }
 
     //verificar horizontalmente
-    for (i = 1; i < MATRIZTAM - 2; ++i) {
-        for (j = 1; j < MATRIZTAM; ++j) {
+    for (i = 0; i < MATRIZTAM - 2; ++i) {
+        for (j = 0; j < MATRIZTAM; ++j) {
             if (matriz[i][j] != '-' && matriz[i][j] == matriz[i + 1][j] && matriz[i][j] == matriz[i + 2][j]) {
-                exit(0);
+                return 1;
             }
 
         }
     }
 
     //verificar diagonais
-    for (i = 1; i < MATRIZTAM - 2; ++i) {
-        for (j = 1; j < MATRIZTAM - 2; ++j) {
+    for (i = 0; i < MATRIZTAM - 2; ++i) {
+        for (j = 0; j < MATRIZTAM - 2; ++j) {
             if (matriz[i][j] != '-' && matriz[i][j] == matriz[i + 1][j + 1] && matriz[i][j] == matriz[i + 2][j + 2]) {
-                exit(0);
+                return 1;
             }
         }
     }
 
     //verificar diagonais
-    for (i = 1; i < MATRIZTAM - 2; ++i) {
-        for (j = 1; j < MATRIZTAM - 2; ++j) {
+    for (i = 0; i < MATRIZTAM - 2; ++i) {
+        for (j = 0; j < MATRIZTAM - 2; ++j) {
             if (matriz[i][j] != '-' && matriz[i][j] == matriz[i + 1][j - 1] && matriz[i][j] == matriz[i + 2][j - 2]) {
-                exit(0);
+                return 1;
             }
         }
     }
+
+    return 0;
 }
 
 //funcao para os jogadores escolherem os tokens
+
 void escolherTokens(char tokens[]) {
 
     do {
@@ -61,6 +62,7 @@ void escolherTokens(char tokens[]) {
 }
 
 //criar matriz
+
 void criarMatriz(char matriz[MATRIZTAM][MATRIZTAM]) {
     int i, j;
     int num;
@@ -75,6 +77,7 @@ void criarMatriz(char matriz[MATRIZTAM][MATRIZTAM]) {
 }
 
 //funcao para preencher a matriz
+
 void printMatriz(char matriz[MATRIZTAM][MATRIZTAM]) {
     int i, j;
     int num;
@@ -97,7 +100,7 @@ void printMatriz(char matriz[MATRIZTAM][MATRIZTAM]) {
 void jogada(char matriz[MATRIZTAM][MATRIZTAM], char tokens[]) {
     int linha, jog, i;
     char coluna;
-    int vitoria;
+    int vencedor = 0;
 
     for (i = 0; i < MATRIZTAM; ++i) {
         do {
@@ -112,11 +115,19 @@ void jogada(char matriz[MATRIZTAM][MATRIZTAM], char tokens[]) {
 
             if (matriz[linha][coluna] == '-') {
                 matriz[linha][coluna] = tokens[0];
-                vitoria=verificar(matriz, tokens, linha, coluna);
+                vencedor = verificar(matriz);
             }
-            
+
             printMatriz(matriz);
+            if (vencedor > 0) {
+                printf("O jogador 1 ganhou !!\n");
+                break;
+            }
         } while (jog == 1);
+
+        if (vencedor > 0) {
+            break;
+        }
 
         do {
             puts("Jogador 2 introduza a linha: (de 1 a 9)");
@@ -130,12 +141,18 @@ void jogada(char matriz[MATRIZTAM][MATRIZTAM], char tokens[]) {
 
             if (matriz[linha][coluna] == '-') {
                 matriz[linha][coluna] = tokens[1];
-                vitoria=verificar(matriz, tokens, linha, coluna);
+                vencedor = verificar(matriz);
             }
-            
+            if (vencedor > 0) {
+                printf("O jogador 2 ganhou.");
+                break;
+            }
             printMatriz(matriz);
-            
+
         } while (jog == 2);
+        if (vencedor > 0) {
+            break;
+        }
     }
 }
 
