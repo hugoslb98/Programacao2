@@ -15,7 +15,7 @@ int verificar(char matriz[][MATRIZTAM]) {
         }
     }
 
-    //verificar horizontalmente
+    //verificar verticalmente
     for (i = 0; i < MATRIZTAM - 2; ++i) {
         for (j = 0; j < MATRIZTAM; ++j) {
             if (matriz[i][j] != '-' && matriz[i][j] == matriz[i + 1][j] && matriz[i][j] == matriz[i + 2][j]) {
@@ -82,7 +82,7 @@ void printMatriz(char matriz[MATRIZTAM][MATRIZTAM]) {
     int i, j;
     int num;
 
-    //abecedario na 1ª linha
+    //letras na 1ª linha
     printf("| |A|B|C|D|E|F|G|H|I|");
 
     puts("");
@@ -98,11 +98,13 @@ void printMatriz(char matriz[MATRIZTAM][MATRIZTAM]) {
 }
 
 void jogada(char matriz[MATRIZTAM][MATRIZTAM], char tokens[]) {
-    int linha, jog, i;
+    int linha, jog, i, cont = 0;
     char coluna;
     int vencedor = 0;
 
+    //ciclo para para pedir ao jogador 1 para introduzir a linha e coluna
     for (i = 0; i < MATRIZTAM; ++i) {
+        ++cont; //contador para saber o nr de jogadas
         do {
             puts("Jogador 1 introduza a linha: (de 1 a 9)");
             scanf("%d", &linha);
@@ -120,7 +122,7 @@ void jogada(char matriz[MATRIZTAM][MATRIZTAM], char tokens[]) {
 
             printMatriz(matriz);
             if (vencedor > 0) {
-                printf("O jogador 1 ganhou !!\n");
+                printf("O jogador 1 ganhou com %d jogadas !!\n", cont);
                 break;
             }
         } while (jog == 1);
@@ -129,6 +131,7 @@ void jogada(char matriz[MATRIZTAM][MATRIZTAM], char tokens[]) {
             break;
         }
 
+        //ciclo para para pedir ao jogador 2 para introduzir a linha e coluna
         do {
             puts("Jogador 2 introduza a linha: (de 1 a 9)");
             scanf("%d", &linha);
@@ -144,7 +147,7 @@ void jogada(char matriz[MATRIZTAM][MATRIZTAM], char tokens[]) {
                 vencedor = verificar(matriz);
             }
             if (vencedor > 0) {
-                printf("O jogador 2 ganhou.");
+                printf("O jogador 2 ganhou com %d jogadas !!\n", cont);
                 break;
             }
             printMatriz(matriz);
